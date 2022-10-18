@@ -317,6 +317,15 @@ body {
     margin-bottom: 20px;
 }
 
+.mobile-menu .ul-medium li:nth-child(1) {
+    padding-top: 30px;
+    border-top: 1px solid var(--very-light-pink);
+}
+
+.mobile-menu .ul-medium li:nth-child(2) {
+    padding-bottom: 15px;
+}
+
 .mobile-menu .ulfooter li:nth-child(1) {
     padding-top: 30px;
     border-top: 1px solid var(--very-light-pink);
