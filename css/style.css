@@ -18,7 +18,6 @@ Fuentes
 }
 
 body {
-    margin: 0;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -715,22 +714,6 @@ nav {
     padding-bottom: 24px;
     box-sizing: border-box;
 }
-
-
-/*
-
-.my-cart-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.my-cart-content {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    max-width: 300px;
-    width: 100%;
-}
-*/
 
 .cart-detail {
     display: grid;
