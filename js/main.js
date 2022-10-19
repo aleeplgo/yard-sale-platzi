@@ -11,8 +11,8 @@ function toggleDropdownMenu() {
 
 
 /*MOSTRAR BURGER MENU EN MOBILE*/
-const iconMenuClick = document.querySelector(".icon-menu").addEventListener("click", toggleMobileMenu);
-const iconMenuOver = document.querySelector(".icon-menu").addEventListener("mouseover", toggleMobileMenu);
+const burgerMenuClick = document.querySelector(".icon-menu").addEventListener("click", toggleMobileMenu);
+const burgerMenuClickOver = document.querySelector(".icon-menu").addEventListener("mouseover", toggleMobileMenu);
 const mobileMenu = document.querySelector(".mobile-menu");
 const closeMobilemenuClick = document.querySelector(".close-mobilemenu").addEventListener("click", closeMobileMenu);
 const closeMobilemenuOut = document.querySelector(".close-mobilemenu").addEventListener("mouseout", closeMobileMenu);
