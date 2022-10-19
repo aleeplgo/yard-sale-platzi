@@ -206,6 +206,7 @@ body {
 
 .icon-menu {
     display: none;
+    cursor: pointer;
 }
 
 .logo-navbar {
@@ -350,6 +351,12 @@ nav {
 /*MOBILE MENU*/
 
 .mobile-menu {
+    /*ACOMODO DE DROPDOWN DEBAJO DEL MAIL*/
+    position: absolute;
+    top: 10%;
+    left: 0;
+    /***********/
+    background-color: var(--white);
     width: 100%;
     max-width: 300px;
     height: auto;
@@ -395,7 +402,7 @@ nav {
 }
 
 .mobile-menu .ulheader li a {
-    margin-bottom: 25px;
+    margin-bottom: 8px;
 }
 
 .mobile-menu .ulfooter li a {
@@ -808,6 +815,27 @@ nav {
 
 /* RESPONSIVE */
 
+@media (max-width: 1000px) {
+    .btn-signup {
+        margin-top: 100px;
+    }
+    .btn-login-account {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 780px) {
+    .navbar-email {
+        display: none;
+    }
+}
+
+@media (min-width: 641px) {
+    .mobile-menu {
+        display: none;
+    }
+}
+
 @media (max-width: 640px) {
     .logo {
         display: block;
@@ -833,9 +861,6 @@ nav {
     .navbar-left ul {
         display: none;
     }
-    .navbar-email {
-        display: none;
-    }
     .desktop-menu {
         display: none;
     }
@@ -844,14 +869,5 @@ nav {
     }
     .shopping-cart-aside {
         width: 100%;
-    }
-}
-
-@media (max-width: 1000px) {
-    .btn-signup {
-        margin-top: 100px;
-    }
-    .btn-login-account {
-        margin-top: 100px;
     }
 }
