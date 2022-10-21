@@ -61,6 +61,89 @@ function toggleCartAside() {
     }
 }
 
+
+/*Lista de productos: HTML a partir de arrays */
+const cardsContainer = document.querySelector(".cards-container");
+const productList = [];
+
+productList.push({
+    name: "Bici",
+    price: 3500,
+    image: "./assets/imgs/product-demo.jpg",
+});
+
+productList.push({
+    name: "Laptop",
+    price: 10500,
+    image: "./assets/imgs/product-demo.jpg",
+});
+
+productList.push({
+    name: "TV",
+    price: 7500,
+    image: "./assets/imgs/product-demo.jpg",
+});
+
+productList.push({
+    name: "Play Station",
+    price: 19000,
+    image: "./assets/imgs/product-demo.jpg",
+});
+
+productList.push({
+    name: "Mouse",
+    price: 100,
+    image: "./assets/imgs/product-demo.jpg",
+});
+
+
+function renderProducts(arr) {
+    /*Recorremos el arreglo de la lista de productos*/
+    for (product of arr) {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+
+        const productImg = document.createElement("img");
+        productImg.classList.add("product-img");
+        //ProductImg es = a los producto de los arreglos
+        productImg.setAttribute("src", product.image);
+
+        const productInfo = document.createElement("div");
+        productInfo.classList.add("product-info");
+
+        productCard.appendChild(productImg);
+        productCard.appendChild(productInfo);
+
+        const productInfoDiv = document.createElement("div");
+        const productPrice = document.createElement("p");
+        productPrice.classList.add("product-price");
+        productPrice.innerText = `$${product.price}`;
+
+        productInfo.appendChild(productInfoDiv);
+
+
+        const productTitle = document.createElement("p");
+        productTitle.classList.add("product-title");
+        productTitle.innerText = `${product.name}`;
+
+        productInfoDiv.appendChild(productPrice);
+        productInfoDiv.appendChild(productTitle);
+
+
+        const productInfoFigure = document.createElement("figure");
+        const productInfoIconCart = document.createElement("img");
+        productInfoIconCart.setAttribute("src", "./assets/icons/bt_add_to_cart.svg");
+        productInfoFigure.appendChild(productInfoIconCart);
+
+        productInfo.appendChild(productInfoFigure);
+        cardsContainer.appendChild(productCard);
+
+    }
+}
+
+renderProducts(productList);
+
+
 /*MOSTRAR PRODUCTO DETAIL */
 const productCard = document.querySelector(".product-card").addEventListener("click", toggleProductDetail);
 const productDetailAside = document.querySelector(".product-detail");
