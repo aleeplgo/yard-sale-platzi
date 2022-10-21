@@ -269,6 +269,7 @@ nav {
 }
 
 .navbar-shopping-cart {
+    cursor: pointer;
     position: relative;
 }
 
@@ -441,6 +442,7 @@ nav {
 .product-card {
     max-width: 240px;
     width: 100%;
+    cursor: pointer;
 }
 
 .product-card img {
@@ -643,6 +645,7 @@ nav {
     padding: 0;
     width: 360px;
     padding-bottom: 24px;
+    background-color: var(--white);
 }
 
 .product-detail .product-img {
@@ -730,10 +733,11 @@ nav {
 }
 
 .shopping-cart-aside {
+    background-color: var(--white);
     position: absolute;
     right: 0;
     margin: 0;
-    padding: 24px;
+    padding: 0 24px;
     max-width: 360px;
     width: 100%;
     padding-bottom: 24px;
