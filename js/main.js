@@ -7,9 +7,13 @@ const dropdownMenu = document.querySelector(".desktop-menu");
 
 function toggleDropdownMenu() {
     const isAsideCartClosed = shoppingCartAside.classList.contains("inactive");
+    const isProductDetailAsideClosed = productDetailAside.classList.contains("inactive");
+
 
     if (!isAsideCartClosed) {
         return shoppingCartAside.classList.add("inactive");
+    } else if (!isProductDetailAsideClosed) {
+        return productDetailAside.classList.add("inactive");
     } else {
         return dropdownMenu.classList.toggle("inactive");
     }
@@ -53,7 +57,7 @@ function toggleCartAside() {
     if (!isMobileMenuClosed) {
         return mobileMenu.classList.add("inactive");
     } else if (!isProductDetailAsideClosed) {
-        return shoppingCartAside.classList.add("inactive");
+        return productDetailAside.classList.add("inactive");
     } else if (!isDropdownMenuClosed) {
         return dropdownMenu.classList.add("inactive");
     } else {
@@ -107,6 +111,7 @@ function renderProducts(arr) {
         productImg.classList.add("product-img");
         //ProductImg es = a los producto de los arreglos
         productImg.setAttribute("src", product.image);
+        productImg.addEventListener("click", openProductDetailAside);
 
         const productInfo = document.createElement("div");
         productInfo.classList.add("product-info");
@@ -145,15 +150,16 @@ renderProducts(productList);
 
 
 /*MOSTRAR PRODUCTO DETAIL */
-const productCard = document.querySelector(".product-card").addEventListener("click", toggleProductDetail);
 const productDetailAside = document.querySelector(".product-detail");
-const iconProductDetailClosed = document.querySelector(".product-detail-close").addEventListener("click", closeProductDetail);
+const productDetailCloseIcon = document.querySelector(".product-detail-close").addEventListener("click", closeProductDetail);
 
 
-function toggleProductDetail() {
+function openProductDetailAside() {
     const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
     const isAsideCartClosed = shoppingCartAside.classList.contains("inactive");
     const isDropdownEmailClosed = dropdownMenu.classList.contains("inactive");
+
+    shoppingCartAside.classList.add("inactive");
 
     if (!isMobileMenuClosed) {
         return mobileMenu.classList.add("inactive");
@@ -162,7 +168,7 @@ function toggleProductDetail() {
     } else if (!isDropdownEmailClosed) {
         return dropdownMenu.classList.add("inactive");
     } else {
-        return productDetailAside.classList.toggle("inactive");
+        return productDetailAside.classList.remove("inactive");
     }
 
 }
