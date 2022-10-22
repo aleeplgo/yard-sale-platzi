@@ -30,9 +30,12 @@ const closeMobilemenuOut = document.querySelector(".close-mobilemenu").addEventL
 
 function toggleMobileMenu() {
     const isAsideCartClosed = shoppingCartAside.classList.contains("inactive");
+    const isProductDetailAsideClosed = productDetailAside.classList.contains("inactive");
 
     if (!isAsideCartClosed) {
         return shoppingCartAside.classList.add("inactive");
+    } else if (!isProductDetailAsideClosed) {
+        return productDetailAside.classList.add("inactive");
     } else {
         return mobileMenu.classList.toggle("inactive");
     }
